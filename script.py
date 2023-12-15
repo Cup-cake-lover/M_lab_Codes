@@ -138,7 +138,7 @@ salamander_data = np.loadtxt("bint.txt")
 salamander_train,salamander_test = salamander_data[:,:int(salamander_data.shape[1]/2)],salamander_data[:,int(salamander_data.shape[1]/2):]
 
 
-Corrs_sal,Mags_sal = calculate_salamander_params(salamander_train)
+Corrs_sal,Mags_sal = calculate_salamander_params(salamander_data)
 
 J_inferred_sal,h_inferred_sal,NLL_sal = boltzmann_machine(160,500,10000,2**11,Mags_sal,Corrs_sal,0.05)
 
